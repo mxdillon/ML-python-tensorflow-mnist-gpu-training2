@@ -1,0 +1,20 @@
+buildPack: ml-python-gpu-training
+
+pipelineConfig:
+  pipelines:
+    overrides:
+      - pipeline: release
+        stage: training
+        name: training
+        containerOptions:
+          resources:
+            limits:
+              cpu: 4
+              memory: 32Gi
+              nvidia.com/gpu: 1
+            requests:
+              cpu: 0.5
+              memory: 8Gi
+              nvidia.com/gpu: 1
+        step:
+          sh: chmod u+x ./run-training.sh && ./run-training.sh
