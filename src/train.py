@@ -42,8 +42,8 @@ class TrainMNIST:
     def load_format_data(self):
         """Download and format mnist dataset for training a classifier.
 
-        Scale the pixel intensities so that they lie in the range [0,1] then batches the data according to the user defined
-        input.
+        Scale the pixel intensities so that they lie in the range [0,1] then batches the data according to the user
+        defined input.
         :return: training and testing datasets (tensorflow objects)
         :rtype: tuple
         """
